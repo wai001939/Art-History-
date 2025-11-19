@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ပန်းချီသင်ကြားရေး Website</title>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar&display=swap');
+
+        body {
+            font-family: 'Noto Sans Myanmar', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #4a148c;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #ffeb3b; }
+
+        section {
+            min-height: 100vh;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.8s ease-in-out;
+        }
+
+        h1 { font-size: 36px; margin-bottom: 20px; animation: fadeInDown 1s; }
+        p { font-size: 20px; max-width: 900px; text-align: center; line-height: 1.8; animation: fadeIn 1.5s; }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #6a1b9a, #ab47bc);
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        .icon-container { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .icon { width: 80px; height: 80px; margin: 15px; transition: transform 0.5s; }
+        .icon:hover { transform: rotate(20deg) scale(1.2); }
+
+        /* Animated Shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out alternate;
+        }
+
+        @keyframes fadeInDown { 0% {opacity:0; transform:translateY(-50px);} 100% {opacity:1; transform:translateY(0);} }
+        @keyframes fadeIn { 0% {opacity:0;} 100% {opacity:1;} }
+        @keyframes float { 0% {transform: translateY(0);} 100% {transform: translateY(-50px);} }
+
+        /* Background colors per page */
+        #page1 { background: linear-gradient(135deg,#fff3e0,#ffe0b2); }
+        #page2 { background: linear-gradient(135deg,#e0f7fa,#b2ebf2); }
+        #page3 { background: linear-gradient(135deg,#f3e5f5,#e1bee7); }
+        #page4 { background: linear-gradient(135deg,#fff8e1,#fff59d); }
+
+        /* Art Highlight Boxes */
+        .highlight {
+            background: rgba(255,255,255,0.3);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="clickSound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+
+<nav>
+    <a href="#page1" onclick="playSound()">သမိုင်း</a>
+    <a href="#page2" onclick="playSound()">မျဉ်းများ</a>
+    <a href="#page3" onclick="playSound()">ပန်းချီတွင် အသုံး</a>
+    <a href="#page4" onclick="playSound()">Contour</a>
+</nav>
+
+<!-- Page 1 -->
+<section id="page1">
+    <h1>ပန်းချီသမိုင်း အကျယ်ချဲ့</h1>
+    <p>ပန်းချီဟာ လူသားရဲ့ခံစားချက်၊ စိတ်နှင့် အတွင်းခံကို ဖော်ပြရန် အသုံးပြုခဲ့ပြီး အရမ်းရှည်လျားတဲ့ သမိုင်းရှိပါတယ်။  
+    <span class="highlight">မိမိတို့ကာလစတင်မှ ဂူပန်းချီ, နတ်ပုံစံ, cave paintings</span> ထိ ဖြစ်ခဲ့ပြီး လူတွေဟာ ဇာတ်လမ်းပြရန်၊ ခံစားချက်ဖော်ပြရန်, လူ့ဘ၀အခြေအနေကို ဖော်ပြရန် အသုံးပြုခဲ့ကြသည်။</p>
+    <p>**Renaissance အစဉ်အလာ** – ဥရောပမှာ perspective, light/shadow နဲ့ realism တိုးတက်စေခဲ့သည်။  
+    **Modern Art** – Impressionism, Expressionism, Cubism စတဲ့ ပန်းချီစတိုင်တွေ ပေါ်လာပြီး abstraction, color expression, emotional impact ကို ပိုမိုအသုံးပြုခဲ့သည်။</p>
+    <div class="icon-container">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/paint-palette.png" alt="Palette">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/easel.png" alt="Easel">
+    </div>
+    <button onclick="scrollToPage('page2')">Next →</button>
+    <div class="shape" style="width:100px;height:100px;background:#ffcc80;top:20%;left:10%;animation-delay:0s;"></div>
+    <div class="shape" style="width:60px;height:60px;background:#ffd54f;top:60%;left:70%;animation-delay:2s;"></div>
+</section>
+
+<!-- Page 2 -->
+<section id="page2">
+    <h1>မျဉ်းများ၏ အရေးပါမှု</h1>
+    <p>မျဉ်းများက ပန်းချီအတွက် အခြေခံတည်ဆောက်ပစ္စည်းဖြစ်ပြီး composition, perspective, balance ဖန်တီးရာတွင် အလွန်အရေးကြီးသည်။  
+    <span class="highlight">မျဉ်းမျိုးစုံ:</span> straight lines, curved lines, zigzag lines, dashed lines, contour lines</p>
+    <p>မျဉ်းများက လှုပ်ရှားမှု, texture, perspective ဖန်တီးရာတွင် အသုံးဝင်ပြီး horizon line, vanishing point တွေသတ်မှတ်ရန် အထောက်အကူဖြစ်စေသည်။</p>
+    <div class="line-example">
+        <p>မျဉ်းနမူနာ:</p>
+        <svg width="200" height="100">
+            <line x1="0" y1="50" x2="200" y2="50" stroke="black" stroke-width="2"/>
+            <line x1="0" y1="20" x2="200" y2="80" stroke="red" stroke-width="2"/>
+            <line x1="0" y1="80" x2="200" y2="20" stroke="blue" stroke-width="2"/>
+        </svg>
+    </div>
+    <div class="icon-container">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/line-chart.png" alt="Lines">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/triangle.png" alt="Triangle">
+    </div>
+    <button onclick="scrollToPage('page1')">← Previous</button>
+    <button onclick="scrollToPage('page3')">Next →</button>
+    <div class="shape" style="width:80px;height:80px;background:#4dd0e1;top:30%;left:80%;animation-delay:1s;"></div>
+</section>
+
+<!-- Page 3 -->
+<section id="page3">
+    <h1>ပန်းချီတွင် မျဉ်းအသုံး</h1>
+    <p>Composition & perspective ဖန်တီးရာတွင် leading lines, grid method, rule of thirds အသုံးပြုနိုင်သည်။  
+    shading, hatching, cross-hatching နဲ့ light source ကို ထည့်သုံးပြီး depth, dimension ဖန်တီးသည်။</p>
+    <p>လက်နက်အသုံး – ruler, compass, pencil, brush, eraser</p>
+    <div class="line-example">
+        <p>Perspective နမူနာ:</p>
+        <svg width="200" height="100">
+            <line x1="100" y1="0" x2="100" y2="100" stroke="black" stroke-width="2"/>
+            <line x1="0" y1="100" x2="100" y2="50" stroke="red" stroke-width="2"/>
+            <line x1="200" y1="100" x2="100" y2="50" stroke="blue" stroke-width="2"/>
+        </svg>
+    </div>
+    <div class="icon-container">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/ruler.png" alt="Ruler">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/compass.png" alt="Compass">
+    </div>
+    <button onclick="scrollToPage('page2')">← Previous</button>
+    <button onclick="scrollToPage('page4')">Next →</button>
+    <div class="shape" style="width:50px;height:50px;background:#ce93d8;top:50%;left:20%;animation-delay:0.5s;"></div>
+</section>
+
+<!-- Page 4 -->
+<section id="page4">
+    <h1>Contour & နောက်ဆုံးအကြံပြုချက်</h1>
+    <p>Contour lines က ပုံသဏ္ဍာန်ကို သတ်မှတ်ပြီး shading, cross contour, volume ဖော်ပြရာ အထောက်အကူဖြစ်သည်။  
+    <span class="highlight">Contour + shading + perspective</span> သုံးရင် ပန်းချီရုပ်ကို သဘာဝကျကျ ဖန်တီးနိုင်သည်။</p>
+    <div class="line-example">
+        <p>Contour နမူနာ:</p>
+        <svg width="200" height="100">
+            <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="none"/>
+        </svg>
+    </div>
+    <div class="icon-container">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/circle.png" alt="Contour">
+        <img class="icon" src="https://img.icons8.com/ios-filled/100/000000/brush.png" alt="Brush">
+    </div>
+    <button onclick="scrollToPage('page3')">← Previous</button>
+    <div class="shape" style="width:70px;height:70px;background:#ffe082;top:40%;left:70%;animation-delay:1s;"></div>
+</section>
+
+<script>
+    function scrollToPage(pageId) {
+        document.getElementById(pageId).scrollIntoView({behavior:'smooth'});
+        playSound();
+    }
+
+    function playSound() {
+        var audio = document.getElementById('clickSound');
+        audio.currentTime = 0;
+        audio.play();
+    }
+</script>
+
+</body>
+</html>
